@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelphias <aelphias@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: aelphias <aelphias@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 15:49:46 by aelphias          #+#    #+#             */
-/*   Updated: 2020/06/22 20:26:36 by aelphias         ###   ########lyon.fr   */
+/*   Updated: 2020/06/27 21:58:58 by aelphias         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ typedef	struct	s_printf
 	int		size;
 	char	*s;
 	int		all_len;
-	va_list check_length;
+	va_list vl;
 	//va_list handle_spec;
 }			t_printf;
 	//va_list ap;
