@@ -6,13 +6,13 @@
 #    By: aelphias <aelphias@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/10 13:58:56 by aelphias          #+#    #+#              #
-#    Updated: 2020/06/25 15:51:19 by aelphias         ###   ########lyon.fr    #
+#    Updated: 2020/07/02 21:38:13 by aelphias         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
 .PHONY: all clean fclean re lib
 
-NAME =			ft_printf_test
+NAME =			test
 
 SRC =			main_int.c #main.c
 
@@ -24,22 +24,17 @@ FT_PRINT =		ft_printf/libftprintf.a
 
 CFLAGS =		-Wall -Wextra -Werror -g
 
-all:			$(NAME)
+all:			
+				gcc -o $(NAME) -I ft_printf/ ft_printf/ft_printf.c libft/ft_strstr.c libft/ft_putnbr.c -I libft/ main_int.c libft/ft_strlen.c libft/ft_strncmp.c libft/ft_putstr.c libft/ft_putchar.c libft/ft_strchr.c
 
-%.o:			%.c
-				gcc -g -I ./libft -I ./ft_printf -o $@ -c $<
-## $@ take target name. $< the first prerequisite
-## -Idir	add include directory of header files
-$(NAME):		$(FT_LIB) $(FT_PRINT) $(OBJ) libft/libft.a ft_printf/libftprintf.a
-				gcc  -o $(NAME)  -L./libft -lft -L./ft_printf -lftprintf $(OBJ)
-
+				
 FORCE:			;
 
 $(FT_LIB):		FORCE
 				make -C ./libft
 
 $(FT_PRINT):	FORCE
-				make -C ./ft_printf
+			make -C ./ft_printf
 
 clean:		
 				/bin/rm -f $(OBJ)

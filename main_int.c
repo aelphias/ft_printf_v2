@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_int.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelphias <aelphias@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: aelphias <aelphias@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/21 14:10:35 by aelphias          #+#    #+#             */
-/*   Updated: 2020/06/27 19:37:35 by aelphias         ###   ########lyon.fr   */
+/*   Updated: 2020/07/02 17:33:06 by aelphias         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
