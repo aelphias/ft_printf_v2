@@ -6,7 +6,7 @@
 #    By: aelphias <aelphias@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/10 13:58:56 by aelphias          #+#    #+#              #
-#    Updated: 2020/07/02 21:38:13 by aelphias         ###   ########lyon.fr    #
+#    Updated: 2020/07/04 18:42:29 by aelphias         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -25,7 +25,11 @@ FT_PRINT =		ft_printf/libftprintf.a
 CFLAGS =		-Wall -Wextra -Werror -g
 
 all:			
-				gcc -o $(NAME) -I ft_printf/ ft_printf/ft_printf.c libft/ft_strstr.c libft/ft_putnbr.c -I libft/ main_int.c libft/ft_strlen.c libft/ft_strncmp.c libft/ft_putstr.c libft/ft_putchar.c libft/ft_strchr.c
+				gcc -o $(NAME) -I ft_printf/ ft_printf/ft_printf.c \
+				 libft/ft_strstr.c libft/ft_putnbr.c -I libft/ \
+				 main_int.c libft/ft_strlen.c libft/ft_strncmp.c \
+				  libft/ft_putstr.c libft/ft_putchar.c libft/ft_strchr.c \
+				  libft/ft_bzero.c
 
 				
 FORCE:			;
