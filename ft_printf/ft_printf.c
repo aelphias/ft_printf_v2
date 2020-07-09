@@ -18,8 +18,7 @@ void	ft_init_struct_printf(t_printf *myprintf)
 }
 
 int ft_printf(const char *s, ...)
-{
-	char *param;
+{ 
 	int i;
 	size_t k;
 	size_t num_ch;
@@ -28,35 +27,34 @@ int ft_printf(const char *s, ...)
 	i = 0;
 	k = 0;
 	num_ch = 0;
-	param = NULL;
 	ft_init_struct_printf(&myprintf);
 	myprintf.s = (char*)s;
-	while (myprintf.s[k])
+
+	while (myprintf.s[k] != '\0')
 	{ 
-		/* if (myprintf.s[k] == '%' && myprintf.s[k++] == '%')
+		if (myprintf.s[k] == '%' && myprintf.s[++k] == '%')
 		{
 			printf("{  1  }");
 			write(1, "%", 1);
 			num_ch++;
-		} */
-		if (myprintf.s[k] == '%')
+		}
+		if (myprintf.s[k] == 'd')
 		{	
-			if (myprintf.s[++k] == '%')
-			{
-				va_start(myprintf.args,s);
-				myprintf.s = (char*)s;
-				i = va_arg(myprintf.args, int);
-				ft_putnbr(i);
-				va_end(myprintf.args);
-				k++;
-				k++;
-			}
+			va_start(myprintf.args, s);
+			myprintf.s = (char*)s;
+			i = va_arg(myprintf.args, int);
+			ft_putnbr(i);
+			va_end(myprintf.args);
+			k += 2;
 		}
 		else
 		{
-			write(1,&(myprintf.s[k]),1);
-			num_ch++;
-			k++;
+			while (myprintf.s[k] != '\0' && myprintf.s[k] != '%')
+			{
+				write(1,&(myprintf.s[k]),1);
+				num_ch++;
+				k++;
+			}
 		}
 	}
 	return (num_ch);

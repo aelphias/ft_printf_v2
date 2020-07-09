@@ -6,7 +6,7 @@
 /*   By: aelphias <aelphias@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 11:38:42 by aelphias          #+#    #+#             */
-/*   Updated: 2020/07/07 18:34:43 by aelphias         ###   ########lyon.fr   */
+/*   Updated: 2020/07/09 16:27:22 by aelphias         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,11 @@ typedef struct s_list
 	size_t	content_size;
 	struct	s_list *next;
 } t_list;
-
+/* <----for ft_printf */
+int		ft_putstr(char const *s);
+int		ft_putchar(char c);
+int		ft_putnbr(int n);
+/* for ft_printf ---> */
 int		ft_isdigit(int c);
 int		ft_isalpha(int c);
 int		ft_isalnum(int c);
@@ -60,13 +64,10 @@ int		ft_strncmp(const char *s1, const char *s2, size_t n);
 char	*ft_strdup(const char *s1);
 char	*ft_strnew(size_t size);
 void	ft_bzero(void *s, size_t n);
-void	ft_putchar(char c);
 void	ft_putchar_fd(char c, int fd);
-int		ft_putstr(char const *s);
 void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl(char const *s);
 void	ft_putendl_fd(char const *s, int fd);
-void	ft_putnbr(int n);
 void	ft_putnbr_fd(int n, int fd);
 void	*ft_memalloc(size_t size);
 void	ft_memdel(void **ap);
