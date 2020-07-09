@@ -12,48 +12,52 @@
 
 #include "ft_printf.h"
 
-void	ft_init_struct_printf(t_printf *myprintf, char *s)
+void	ft_init_struct_printf(t_printf *myprintf)
 {	
 	ft_bzero(myprintf, sizeof(t_printf));
-	myprintf->s = s;
 }
 
 int ft_printf(const char *s, ...)
 {
-	printf("{ 1 }\n");
 	char *param;
 	int i;
-	t_printf *myprintf;
+	size_t k;
+	size_t num_ch;
+	t_printf myprintf;
 
 	i = 0;
+	k = 0;
+	num_ch = 0;
 	param = NULL;
-	ft_init_struct_printf(myprintf, (char*)s);
-	if ((param = ft_strchr(myprintf->s,'%')))
-	{
-		printf("{ 2 }\n");
-
-		if (ft_strstr(myprintf->s,"d"))
+	ft_init_struct_printf(&myprintf);
+	myprintf.s = (char*)s;
+	while (myprintf.s[k])
+	{ 
+		/* if (myprintf.s[k] == '%' && myprintf.s[k++] == '%')
 		{
-			printf("{ 3 }\n");
-
-			va_start(myprintf->handle_spec,s);
-			myprintf->s = (char*)s;
-			i = va_arg(myprintf->handle_spec, int);
-			printf("\n  %d\n  ",i);
-
-			ft_putnbr(i);
-			printf("{ 4 }\n");
-			va_end(myprintf->handle_spec);
+			printf("{  1  }");
+			write(1, "%", 1);
+			num_ch++;
+		} */
+		if (myprintf.s[k] == '%')
+		{	
+			if (myprintf.s[++k] == '%')
+			{
+				va_start(myprintf.args,s);
+				myprintf.s = (char*)s;
+				i = va_arg(myprintf.args, int);
+				ft_putnbr(i);
+				va_end(myprintf.args);
+				k++;
+				k++;
+			}
+		}
+		else
+		{
+			write(1,&(myprintf.s[k]),1);
+			num_ch++;
+			k++;
 		}
 	}
-	else
-	{
-		// while (s)
-		// {
-		// 	/* code */
-		// }
-		write(1,"ko\n",3);
-	}
-
-	return (0);
+	return (num_ch);
 }

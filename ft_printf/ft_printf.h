@@ -6,7 +6,7 @@
 /*   By: aelphias <aelphias@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 15:49:46 by aelphias          #+#    #+#             */
-/*   Updated: 2020/07/04 18:59:54 by aelphias         ###   ########lyon.fr   */
+/*   Updated: 2020/07/05 21:54:31 by aelphias         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,14 +44,13 @@ typedef	struct	s_printf
     char    flag; // in binary
 	char	point;
 	int		spec;
-    int		width;
+    int		width;	
 	int		precision;
 	int		size;
 	char	*s;
 	int		all_len;
-	va_list handle_spec;
+	va_list args;
 }			t_printf;
-	va_list ap;
 	int	ft_printf(const char *s, ...);
 	//void	ft_parse_flags(t_printf *myprintf, const char *s);
 	//void	ft_init_struct_printf(t_printf *myprintf, const char *s, va_list args);

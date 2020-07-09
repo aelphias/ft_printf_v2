@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelphias <aelphias@student.42.fr>          +#+  +:+       +#+        */
+/*   By: aelphias <aelphias@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/09/19 11:38:42 by aelphias          #+#    #+#             */
-/*   Updated: 2020/02/18 02:45:31 by aelphias         ###   ########.fr       */
+/*   Updated: 2020/07/07 18:34:43 by aelphias         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,7 +62,7 @@ char	*ft_strnew(size_t size);
 void	ft_bzero(void *s, size_t n);
 void	ft_putchar(char c);
 void	ft_putchar_fd(char c, int fd);
-void	ft_putstr(char const *s);
+int		ft_putstr(char const *s);
 void	ft_putstr_fd(char const *s, int fd);
 void	ft_putendl(char const *s);
 void	ft_putendl_fd(char const *s, int fd);
