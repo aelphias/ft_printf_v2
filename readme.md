@@ -1,4 +1,4 @@
-# Receipt to cook printf
+# How to cook printf
 
 Ints:
 (1)How to organise flags storage?
