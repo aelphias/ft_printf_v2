@@ -6,7 +6,7 @@
 /*   By: aelphias <aelphias@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 15:49:46 by aelphias          #+#    #+#             */
-/*   Updated: 2020/07/05 21:54:31 by aelphias         ###   ########lyon.fr   */
+/*   Updated: 2020/07/09 17:25:06 by aelphias         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,8 @@
 
 # include "libft.h"
 # include <stdarg.h> /*variable argument lists*/
-# include <stdio.h> /* DEL */
+# include <stdio.h> /* DEL */ 
+#include  <stdlib.h> /* DEL */
 
 # define MINUS 1
 # define PLUS 2
