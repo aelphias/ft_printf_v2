@@ -6,7 +6,7 @@
 /*   By: aelphias <aelphias@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/21 14:10:35 by aelphias          #+#    #+#             */
-/*   Updated: 2020/07/09 20:20:30 by aelphias         ###   ########lyon.fr   */
+/*   Updated: 2020/07/10 19:52:54 by aelphias         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,8 +15,8 @@
 
 int main(void)
 {
-	int digit = 21;
-	char *format = "%i";
+	int digit = 42;
+	char *format = "%d";
 	int count = 0;
 	int count2 = 0;
 

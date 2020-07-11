@@ -2,8 +2,8 @@
 
 %[parameter][flags][width][.precision][length]type
 / / Manage the flags #0-+ and space
-/ / Manage conversions: csp 
-/ / diouxX with the  flags: hh, h, l and ll.
+/ / Manage conversions: c-unsigned char, s - str, p - pointer ?
+/ / d & i - ints in decimal; ouxX with the  flags: hh, h, l and ll.
 / / f with the  flags: l and L.
 / / %%
 / / Manage the minimum field-width
@@ -16,7 +16,8 @@
 (c) use ternanry operations to compare values
 read format
 if %% -> print %, count++
-if %d -> parse int, print, count++
+if flags: #0-+
+if %d || %i -> parse int, print, count++
 if format only -> printf format count++ for each symbol
 
 Start parsing format string 

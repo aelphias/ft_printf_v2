@@ -18,32 +18,38 @@ void	ft_init_struct_printf(t_printf *myprintf, char *s)
 	myprintf->s = s;
 }
 
+int	ft_parse_flags(t_printf *myprintf)
+{
+	if (*(myprintf->s) == 'd')
+	{
+		/* code */
+	}
+	return (0);	
+}
 int	ft_parse_format_args(t_printf *myprintf)
 {
-	int k;
-
-	k = 0;
-	if (myprintf->s[k] == '%')
+	if (*(myprintf->s) == '%')
 		{
-			if (myprintf->s[++k] == 'd' || myprintf->s[k] == 'i')
+			
+			if (*++(myprintf->s) == 'd' || *(myprintf->s) == 'i')
 			{	
 				myprintf->all_len += ft_putnbr(va_arg(myprintf->args, int));
-				k++;
+				*(myprintf->s)++;
 			}
-			else if (myprintf->s[k] == '%')
+			else if (*(myprintf->s) == '%')
 			{
 				write(1, "%", 1);
 				myprintf->all_len++;
-				k++;
+				*(myprintf->s)++;
 			}
 		}
 		else
 		{
-			if (myprintf->s[k] != '\0' && myprintf->s[k] != '%')
+			if (*(myprintf->s) != '\0' && *(myprintf->s) != '%')
 			{
-				write(1, &(myprintf->s[k]), 1);
+				write(1, myprintf->s, 1);
 				myprintf->all_len++;
-				k++;
+				*(myprintf->s)++;
 			}
 		}
 }

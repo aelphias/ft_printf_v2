@@ -6,7 +6,7 @@
 /*   By: aelphias <aelphias@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 15:49:46 by aelphias          #+#    #+#             */
-/*   Updated: 2020/07/09 17:25:06 by aelphias         ###   ########lyon.fr   */
+/*   Updated: 2020/07/10 19:24:22 by aelphias         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,7 @@ typedef	struct	s_printf
 	int		size;
 	char	*s;
 	int		all_len;
+	int		k;
 	va_list args;
 }			t_printf;
 	int	ft_printf(const char *s, ...);
