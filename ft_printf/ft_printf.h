@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelphias <aelphias@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: aelphias <aelphias@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 15:49:46 by aelphias          #+#    #+#             */
-/*   Updated: 2020/07/12 10:12:53 by aelphias         ###   ########lyon.fr   */
+/*   Updated: 2020/07/17 22:09:11 by aelphias         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,15 +37,14 @@
 # define OCTAL 'o'
 # define HEX 'x'
 # define HEX_UP 'X'
-# define FLOAT 'f'
 # define PERCENT '%'
 
 typedef	struct	s_printf
 {
-    char    flag; // in binary
+	char    flag; // in binary
 	char	point;
 	int		spec;
-    int		width;	
+	int		width;	
 	int		precision;
 	int		size;
 	char	*s;

@@ -41,16 +41,16 @@ void	ft_simple_print(t_printf *data)
 	} */
 }
 
-int	ft_parse_flags(t_printf *data)
+void	ft_parse_flags(t_printf *data)
 {
 	if (*++(data->s) == 'd' || *(data->s) == 'i')
 	{	
 		data->all_len += ft_putnbr(va_arg(data->args, int));
 		*(data->s)++;
 	}
-	return (0);	
+
 }
-int	ft_parse_format_args(t_printf *data)
+void    ft_parse_format_args(t_printf *data)
 {
 	if (*(data->s) == '%')
 	{
