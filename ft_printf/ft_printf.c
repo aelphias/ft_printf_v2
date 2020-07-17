@@ -12,80 +12,76 @@
 
 #include "ft_printf.h"
 
-void	ft_init_struct_printf(t_printf *myprintf, char *s)
+void	ft_init_struct_printf(t_printf *data, char *s)
 {	
-	ft_bzero(myprintf, sizeof(t_printf));
-	myprintf->s = s;
+	ft_bzero(data, sizeof(t_printf));
+	data->s = s;
 }
 
-int	ft_parse_flags(t_printf *myprintf)
+void	ft_simple_print(t_printf *data)
 {
-	if (*(myprintf->s) == 'd')
+	int i;
+
+	i = 0;
+	while (data->s[i] != '\0' && data->s[i] != '%')
+			i++;
+	if (i)
 	{
-		/* code */
+		write(1, data->s, i);
+		data->all_len +=i;
+		data->s +=i;
+	}
+	
+	/* write(1, data->s, i);
+	
+	while (*(data->s) != '\0' && *(data->s) != '%')
+	{	
+		data->all_len++;
+		data->s++;
+	} */
+}
+
+int	ft_parse_flags(t_printf *data)
+{
+	if (*++(data->s) == 'd' || *(data->s) == 'i')
+	{	
+		data->all_len += ft_putnbr(va_arg(data->args, int));
+		*(data->s)++;
 	}
 	return (0);	
 }
-int	ft_parse_format_args(t_printf *myprintf)
+int	ft_parse_format_args(t_printf *data)
 {
-	if (*(myprintf->s) == '%')
+	if (*(data->s) == '%')
+	{
+		if (*(++data->s) == '%')
 		{
-			
-			if (*++(myprintf->s) == 'd' || *(myprintf->s) == 'i')
-			{	
-				myprintf->all_len += ft_putnbr(va_arg(myprintf->args, int));
-				*(myprintf->s)++;
-			}
-			else if (*(myprintf->s) == '%')
-			{
-				write(1, "%", 1);
-				myprintf->all_len++;
-				*(myprintf->s)++;
-			}
+			write(1, "%", 1);
+			data->all_len++;
+			*(data->s)++;
 		}
 		else
 		{
-			if (*(myprintf->s) != '\0' && *(myprintf->s) != '%')
-			{
-				write(1, myprintf->s, 1);
-				myprintf->all_len++;
-				*(myprintf->s)++;
-			}
+			data->s++;
+			ft_parse_flags(data);
 		}
+	}
 }
 
 int ft_printf(const char *s, ...)
 { 
-	t_printf myprintf;
+	t_printf data;
 
-	ft_init_struct_printf(&myprintf, (char*)s);
-	va_start(myprintf.args, s);
-	ft_parse_format_args(&myprintf);
-	va_end(myprintf.args);
-	return (myprintf.all_len);
-}
-
-/* if (myprintf->s[k] == '%' && myprintf->s[++k] == '%')
-		{
-			printf("{  1  }");
-			write(1, "%", 1);
-			num_ch++;
-		}
-		if (myprintf->s[k] == 'd')
-		{	
-			va_start(myprintf->args, s);
-			myprintf->s = (char*)s;
-			i = va_arg(myprintf->args, int);
-			ft_putnbr(i);
-			va_end(myprintf->args);
-			k += 2;
-		}
+	ft_init_struct_printf(&data, (char*)s);
+	va_start(data.args, s);
+	while (*(data.s) != '\0')
+	{
+		if (*(data.s) != '%')
+			ft_simple_print(&data);
 		else
-		{
-			while (myprintf->s[k] != '\0' && myprintf->s[k] != '%')
-			{
-				write(1,&(myprintf->s[k]),1);
-				num_ch++;
-				k++;
-			}
-		} */
+			ft_parse_format_args(&data);
+		data.s++;
+	}
+	va_end(data.args);
+	return (data.all_len);
+}

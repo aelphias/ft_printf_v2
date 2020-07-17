@@ -6,7 +6,7 @@
 /*   By: aelphias <aelphias@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 15:49:46 by aelphias          #+#    #+#             */
-/*   Updated: 2020/07/10 19:24:22 by aelphias         ###   ########lyon.fr   */
+/*   Updated: 2020/07/12 10:12:53 by aelphias         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,11 +54,11 @@ typedef	struct	s_printf
 	va_list args;
 }			t_printf;
 	int	ft_printf(const char *s, ...);
-	//void	ft_parse_flags(t_printf *myprintf, const char *s);
-	//void	ft_init_struct_printf(t_printf *myprintf, const char *s, va_list args);
-	//void	ft_count_str(t_printf *myprintf, va_list args);
-	//void	ft_count_int(t_printf *myprintf, va_list args);
-	//void	ft_count(t_printf *myprintf, va_list args);
-	//void	ft_count_char(t_printf *myprintf);
+	//void	ft_parse_flags(t_printf *data, const char *s);
+	//void	ft_init_struct_printf(t_printf *data, const char *s, va_list args);
+	//void	ft_count_str(t_printf *data, va_list args);
+	//void	ft_count_int(t_printf *data, va_list args);
+	//void	ft_count(t_printf *data, va_list args);
+	//void	ft_count_char(t_printf *data);
 
 #endif
