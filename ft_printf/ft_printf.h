@@ -6,7 +6,7 @@
 /*   By: aelphias <aelphias@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 15:49:46 by aelphias          #+#    #+#             */
-/*   Updated: 2020/07/17 22:09:11 by aelphias         ###   ########lyon.fr   */
+/*   Updated: 2020/07/19 20:11:31 by aelphias         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,7 @@
 # include "libft.h"
 # include <stdarg.h> /*variable argument lists*/
 # include <stdio.h> /* DEL */ 
-#include  <stdlib.h> /* DEL */
+# include <stdlib.h> /* DEL */
 
 # define MINUS 1
 # define PLUS 2
@@ -44,7 +44,7 @@ typedef	struct	s_printf
 	char    flag; // in binary
 	char	point;
 	int		spec;
-	int		width;	
+	int		width;
 	int		precision;
 	int		size;
 	char	*s;

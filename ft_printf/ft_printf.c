@@ -20,52 +20,41 @@ void	ft_init_struct_printf(t_printf *data, char *s)
 
 void	ft_simple_print(t_printf *data)
 {
+	/*be carful with index here*/
 	int i;
-
 	i = 0;
 	while (data->s[i] != '\0' && data->s[i] != '%')
 			i++;
 	if (i)
 	{
 		write(1, data->s, i);
-		data->all_len +=i;
-		data->s +=i;
+		data->all_len += i;
+		data->s += i;
 	}
-	
-	/* write(1, data->s, i);
-	
-	while (*(data->s) != '\0' && *(data->s) != '%')
-	{	
-		data->all_len++;
-		data->s++;
-	} */
 }
 
 void	ft_parse_flags(t_printf *data)
 {
-	if (*++(data->s) == 'd' || *(data->s) == 'i')
+	if (*(data->s) == '0')
+		data->flag |= ZERO;
+	if (*(data->s) == ' ')
+		data->flag |= SPACE;
+		
+
+	if (*(data->s) == 'd' || *(data->s) == 'i')
 	{	
 		data->all_len += ft_putnbr(va_arg(data->args, int));
-		*(data->s)++;
+		data->s++;
 	}
-
+	//parse_spec(data);
 }
-void    ft_parse_format_args(t_printf *data)
+
+void    if_persent(t_printf *data)
 {
-	if (*(data->s) == '%')
-	{
-		if (*(++data->s) == '%')
-		{
-			write(1, "%", 1);
-			data->all_len++;
-			*(data->s)++;
-		}
-		else
-		{
-			data->s++;
-			ft_parse_flags(data);
-		}
-	}
+	if (*(++data->s) == '%')
+		data->all_len += write(1, "%", 1);
+	else
+		ft_parse_flags(data);
 }
 
 int ft_printf(const char *s, ...)
@@ -79,8 +68,7 @@ int ft_printf(const char *s, ...)
 		if (*(data.s) != '%')
 			ft_simple_print(&data);
 		else
-			ft_parse_format_args(&data);
-		data.s++;
+			if_persent(&data);
 	}
 	va_end(data.args);
 	return (data.all_len);
