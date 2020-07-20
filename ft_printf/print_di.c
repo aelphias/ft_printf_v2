@@ -1,34 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   main_int.c                                         :+:      :+:    :+:   */
+/*   print_di.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelphias <aelphias@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/21 14:10:35 by aelphias          #+#    #+#             */
-/*   Updated: 2020/07/20 20:28:17 by aelphias         ###   ########lyon.fr   */
+/*   Created: 2020/07/20 18:43:40 by aelphias          #+#    #+#             */
+/*   Updated: 2020/07/20 18:49:25 by aelphias         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
-#include <limits.h>
-#include <string.h>
 
-int main(void)
+void    print_di(t_printf *data)
 {
-	int digit = 42;
-	char *format = "%-d";
-	ft_printf(format, digit);
-	// printf(format, digit);
-	return(0);
-} 
-
-
-/*int digit = 42;
-	char format[8000000 + 1] = "Hello";
-	int count = 0;
-	int count2 = 0;
-
-	memset(format,'+', 8000000);
-	format[8000000] = '\0';
-	ft_printf(format, digit);*/
+    data->all_len += ft_putnbr(va_arg(data->args, int));
+}

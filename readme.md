@@ -1,6 +1,9 @@
 # How to cook a printf
 
 %[parameter][flags][width][.precision][length]type
+/*/ Parse the flags #0-+ and space
+/ / Parse the minimum field-width
+/ / Parse the precision
 / / Manage the flags #0-+ and space
 / / Manage conversions: c-unsigned char, s - str, p - pointer ?
 / / d & i - ints in decimal; ouxX with the  flags: hh, h, l and ll.

@@ -6,7 +6,7 @@
 /*   By: aelphias <aelphias@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 15:49:46 by aelphias          #+#    #+#             */
-/*   Updated: 2020/07/19 20:11:31 by aelphias         ###   ########lyon.fr   */
+/*   Updated: 2020/07/20 21:04:01 by aelphias         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,14 @@
 # define HEX 'x'
 # define HEX_UP 'X'
 # define PERCENT '%'
-
+/*my lovely struct data--->*/
 typedef	struct	s_printf
 {
+	/* int     plus;
+	int     minus;
+	int     zero;
+	int     hash;
+	int     space; */
 	char    flag; // in binary
 	char	point;
 	int		spec;
@@ -49,10 +54,16 @@ typedef	struct	s_printf
 	int		size;
 	char	*s;
 	int		all_len;
-	int		k;
 	va_list args;
 }			t_printf;
+/*<---my lovely struct data*/
 	int	ft_printf(const char *s, ...);
+	void	ft_parse_flags(t_printf *data);
+	void	parse_width(t_printf *data);
+	void    clean_flags(t_printf *data);
+	void    print_di(t_printf *data);
+
+
 	//void	ft_parse_flags(t_printf *data, const char *s);
 	//void	ft_init_struct_printf(t_printf *data, const char *s, va_list args);
 	//void	ft_count_str(t_printf *data, va_list args);

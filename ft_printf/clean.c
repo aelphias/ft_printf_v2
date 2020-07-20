@@ -1,19 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_parse_int.c                                     :+:      :+:    :+:   */
+/*   clean.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: aelphias <aelphias@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/06/27 19:44:52 by aelphias          #+#    #+#             */
-/*   Updated: 2020/06/27 21:44:13 by aelphias         ###   ########lyon.fr   */
+/*   Created: 2020/07/20 18:25:23 by aelphias          #+#    #+#             */
+/*   Updated: 2020/07/20 18:40:58 by aelphias         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_printf.h"
 
-int ft_parse_int()
-{   
-    
-	return (0);
+void    clean_flags(t_printf *data)
+{
+    ft_bzero(&(data->flag), sizeof(data->flag));
 }
