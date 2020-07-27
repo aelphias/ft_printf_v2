@@ -6,7 +6,7 @@
 /*   By: aelphias <aelphias@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:39:36 by aelphias          #+#    #+#             */
-/*   Updated: 2020/07/26 19:38:28 by aelphias         ###   ########lyon.fr   */
+/*   Updated: 2020/07/27 14:09:56 by aelphias         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,8 +68,9 @@ void	parse_spec(t_printf *data)
 {
 	if (*(data->s) == 'd' || *(data->s) == 'i')
 	{	
-		print_di(data);
+		data->spec |= INTEGER;
 		data->s++;
+		print_di(data);
 		tst_flags(data);
 	}
 }

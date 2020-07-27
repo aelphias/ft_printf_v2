@@ -13,7 +13,7 @@
 #include "ft_printf.h"
 
 void    print_di(t_printf *data)
-{
+{   
     if (data->width )//  && !(data->flag & MINUS) && (data->flag & ZERO))
     {
         write(1, " ", data->width);
