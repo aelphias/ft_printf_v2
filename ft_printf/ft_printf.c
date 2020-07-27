@@ -20,16 +20,11 @@ void	ft_init_struct_printf(t_printf *data, char *s)
 
 void	ft_simple_print(t_printf *data)
 {
-	/*be careful with index here*/
-	int i;
-	i = 0;
-	while (data->s[i] != '\0' && data->s[i] != '%')
-			i++;
-	if (i)
+	while (*data->s != '\0' && *data->s != '%')
 	{
-		write(1, data->s, i);
-		data->all_len += i;
-		data->s += i;
+		write(1, data->s, 1);
+		data->all_len++;
+		data->s++;
 	}
 }
 
@@ -60,3 +55,15 @@ int ft_printf(const char *s, ...)
 	va_end(data.args);
 	return (data.all_len);
 }
+
+
+/*	 faster way to direct print
+	i = 0;
+	while (data->s[i] != '\0' && data->s[i] != '%')
+			i++;
+	if (i)
+	{
+		write(1, data->s, i);
+		data->all_len += i;
+		data->s += i;
+	}*/

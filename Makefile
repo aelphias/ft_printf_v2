@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: aelphias <aelphias@student.42lyon.fr>      +#+  +:+       +#+         #
+#    By: aelphias <aelphias@student.21-school.ru    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/10 13:58:56 by aelphias          #+#    #+#              #
-#    Updated: 2020/07/20 20:45:07 by aelphias         ###   ########lyon.fr    #
+#    Updated: 2020/07/25 21:09:39 by aelphias         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,11 +26,11 @@ CFLAGS =		-Wall -Wextra -Werror -g
 
 all:			
 				@gcc $(CFLAGS) -o $(NAME) -I ft_printf/ ft_printf/ft_printf.c \
-				ft_printf/clean.c ft_printf/print_di.c parse_format.c \
+				ft_printf/clean.c ft_printf/print_di.c ft_printf/parse_format.c \
 				libft/ft_strstr.c libft/ft_putnbr.c -I libft/ \
 				main_int.c libft/ft_strlen.c libft/ft_strncmp.c \
 				libft/ft_putstr.c libft/ft_putchar.c libft/ft_strchr.c \
-				libft/ft_bzero.c
+				libft/ft_bzero.c ft_printf/testing.c
 				
 FORCE:			;
 

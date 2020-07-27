@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelphias <aelphias@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: aelphias <aelphias@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 15:49:46 by aelphias          #+#    #+#             */
-/*   Updated: 2020/07/20 21:04:01 by aelphias         ###   ########lyon.fr   */
+/*   Updated: 2020/07/26 19:36:32 by aelphias         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ typedef	struct	s_printf
 	int     hash;
 	int     space; */
 	char    flag; // in binary
-	char	point;
+	int		dot;
 	int		spec;
 	int		width;
 	int		precision;
@@ -62,6 +62,12 @@ typedef	struct	s_printf
 	void	parse_width(t_printf *data);
 	void    clean_flags(t_printf *data);
 	void    print_di(t_printf *data);
+	void	parse_spec(t_printf *data);
+	void	parse_dot(t_printf *data);
+	void	parse_presion(t_printf *data);
+
+/*TEST--->*/
+	void	tst_flags(t_printf *data);
 
 
 	//void	ft_parse_flags(t_printf *data, const char *s);
