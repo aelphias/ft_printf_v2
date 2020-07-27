@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   parse_format.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelphias <aelphias@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: aelphias <aelphias@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/07/20 20:39:36 by aelphias          #+#    #+#             */
-/*   Updated: 2020/07/27 14:09:56 by aelphias         ###   ########lyon.fr   */
+/*   Updated: 2020/07/27 20:11:41 by aelphias         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,22 @@
 
 void	ft_parse_flags(t_printf *data)
 {
-    while (*(data->s) == '0' || *(data->s) == ' ' || *(data->s) == '-'
-    || *(data->s) == '+' || *(data->s) == '#')
-    {
-        if (*(data->s) == '0')
-		    data->flag |= ZERO;
-	    if (*(data->s) == ' ')
-		    data->flag |= SPACE;
-	    if (*(data->s) == '-')
-		    data->flag |= MINUS;
-	    if (*(data->s) == '+')
-		    data->flag |= PLUS;
-        if (*(data->s) == '#')
-		    data->flag |= HASH;
-        data->s++;
-    }
-    parse_width(data);
+	while (*(data->s) == '0' || *(data->s) == ' ' || *(data->s) == '-'
+	|| *(data->s) == '+' || *(data->s) == '#')
+	{
+		if (*(data->s) == '0')
+			data->flag |= ZERO;
+		if (*(data->s) == ' ')
+			data->flag |= SPACE;
+		if (*(data->s) == '-')
+			data->flag |= MINUS;
+		if (*(data->s) == '+')
+			data->flag |= PLUS;
+		if (*(data->s) == '#')
+			data->flag |= HASH;
+		data->s++;
+	}
+	parse_width(data);
 }
 
 void	parse_width(t_printf *data)
@@ -69,8 +69,8 @@ void	parse_spec(t_printf *data)
 	if (*(data->s) == 'd' || *(data->s) == 'i')
 	{	
 		data->spec |= INTEGER;
-		data->s++;
 		print_di(data);
 		tst_flags(data);
+		data->s++;
 	}
 }

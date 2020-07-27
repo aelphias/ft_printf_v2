@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main_int.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelphias <aelphias@student.21-school.ru    +#+  +:+       +#+        */
+/*   By: aelphias <aelphias@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/21 14:10:35 by aelphias          #+#    #+#             */
-/*   Updated: 2020/07/27 14:16:49 by aelphias         ###   ########lyon.fr   */
+/*   Updated: 2020/07/27 18:51:26 by aelphias         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ int main(void)
 	int digit = 42;
 	int cnt1 = 0;
 	int cnt2 = 0;
-	char *format = "Hello darling!%10.3d";
+	char *format = "Hello darling!%010.3d";
 	cnt1 = ft_printf(format, digit);
 	printf("\nmy_length: %d\n", cnt1);
 	printf("\n----------orig:\n");

@@ -1,1 +1,3 @@
 gcc -I ft_printf/ ft_printf/ft_printf.c libft/ft_strstr.c libft/ft_putnbr.c -I libft/ main_int.c libft/ft_strlen.c libft/ft_strncmp.c libft/ft_putstr.c libft/ft_putchar.c libft/ft_strchr.c
+
+gcc -g -O0 ft_printf/*.c -Ift_printf -Llibft -lft -Ilibft main_int.c

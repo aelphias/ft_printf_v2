@@ -14,11 +14,5 @@
 
 void    print_di(t_printf *data)
 {   
-    if (data->width )//  && !(data->flag & MINUS) && (data->flag & ZERO))
-    {
-        write(1, " ", data->width);
-        data->all_len += ft_putnbr(va_arg(data->args, int));
-    }
-    else
-        data->all_len += ft_putnbr(va_arg(data->args, int));
+	data->all_len += ft_putnbr(va_arg(data->args, int));
 }
