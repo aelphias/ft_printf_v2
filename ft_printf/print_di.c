@@ -30,16 +30,49 @@ void    print_di(t_printf *data)
 {
 	int num;
 	int digits;
+    int m_width;
 
 	num = 0;
+    m_width = 0;
 	digits = 0;   
-	/* data->all_len += ft_putnbr(va_arg(data->args, int));
- */
+	/* data->all_len += ft_putnbr(va_arg(data->args, int));*/
 	num = va_arg(data->args, int);
+	if (num > 0)
+	data->positive = 1;
 	digits = count_d(num);
-	if (digits >= data->width)
-		data->all_len += ft_putnbr(num);
-	
+	printf("\n{digits:%d}\n", digits);
+	if (data->positive && data->flag & PLUS)
+	{
+		write(1, "+", 1);
+		data->all_len++;
+	}
+	if (digits <= data->width)
+    {
+        m_width = data->width - digits;
+        if (data->flag & MINUS)
+        {
+            data->all_len += ft_putnbr(num);
+            data->all_len += m_width;
+            while (m_width)
+            {
+                write(1, " ", 1);
+                m_width--;
+            }
+        }
+        else if (data->flag & ZERO)
+        {
+            data->all_len += m_width;
+            while (m_width)
+            {
+                write(1, "0", 1);
+                m_width--;
+            }
+            data->all_len += ft_putnbr(num);
+        }
+        
+        
+    }
+    
 
 
 }

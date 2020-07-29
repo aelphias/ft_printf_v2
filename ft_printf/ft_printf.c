@@ -45,7 +45,10 @@ int ft_printf(const char *s, ...)
 	while (*(data.s) != '\0')
 	{
 		if (*(data.s) != '%')
+        {
+            data.all_len++;
 			ft_simple_print(&data);
+        }
 		else
 		{
 			if_percent(&data);
