@@ -12,7 +12,34 @@
 
 #include "ft_printf.h"
 
+
+int count_d(int num)
+{
+	int digits;
+
+	digits = 0;
+	while (num > 0)
+	{
+		num = num / 10;
+		digits++;
+	}
+	return (digits);
+}
+
 void    print_di(t_printf *data)
-{   
-	data->all_len += ft_putnbr(va_arg(data->args, int));
+{
+	int num;
+	int digits;
+
+	num = 0;
+	digits = 0;   
+	/* data->all_len += ft_putnbr(va_arg(data->args, int));
+ */
+	num = va_arg(data->args, int);
+	digits = count_d(num);
+	if (digits >= data->width)
+		data->all_len += ft_putnbr(num);
+	
+
+
 }
