@@ -31,7 +31,10 @@ void	ft_simple_print(t_printf *data)
 void    if_percent(t_printf *data)
 {
 	if (*(++data->s) == '%')
+	{
 		data->all_len += write(1, "%", 1);
+		data->s++;
+	}
 	else
 		ft_parse_flags(data);
 }
@@ -45,12 +48,9 @@ int ft_printf(const char *s, ...)
 	while (*(data.s) != '\0')
 	{
 		if (*(data.s) != '%')
-        {
-            data.all_len++;
 			ft_simple_print(&data);
-        }
 		else
-		{
+		{	
 			if_percent(&data);
 			clean_flags(&data);
 		}

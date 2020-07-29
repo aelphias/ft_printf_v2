@@ -6,7 +6,7 @@
 /*   By: aelphias <aelphias@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 15:49:46 by aelphias          #+#    #+#             */
-/*   Updated: 2020/07/29 16:23:21 by aelphias         ###   ########lyon.fr   */
+/*   Updated: 2020/07/29 19:52:24 by aelphias         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ typedef	struct	s_printf
 	int		size;
 	char	*s;
 	int		all_len;
+    int     digits;
+    int     num_int;
 	va_list args;
 }			t_printf;
 /*<---my lovely struct data*/
@@ -63,6 +65,7 @@ typedef	struct	s_printf
 	void	parse_width(t_printf *data);
 	void    clean_flags(t_printf *data);
 	void    print_di(t_printf *data);
+    void    print_di_pres(t_printf *data);
 	void	parse_spec(t_printf *data);
 	void	parse_dot(t_printf *data);
 	void	parse_presion(t_printf *data);
