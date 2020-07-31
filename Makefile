@@ -6,7 +6,7 @@
 #    By: aelphias <aelphias@student.42lyon.fr>      +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/12/10 13:58:56 by aelphias          #+#    #+#              #
-#    Updated: 2020/07/27 18:28:56 by aelphias         ###   ########lyon.fr    #
+#    Updated: 2020/07/31 18:31:53 by aelphias         ###   ########lyon.fr    #
 #                                                                              #
 # **************************************************************************** #
 
@@ -30,7 +30,7 @@ all:
 				libft/ft_strstr.c libft/ft_putnbr.c -I libft/ \
 				main_int.c libft/ft_strlen.c libft/ft_strncmp.c \
 				libft/ft_putstr.c libft/ft_putchar.c libft/ft_strchr.c \
-				libft/ft_bzero.c ft_printf/testing.c
+				libft/ft_bzero.c ft_printf/testing.c ft_printf/parse_spec.c
 				
 FORCE:			;
 

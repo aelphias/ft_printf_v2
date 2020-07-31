@@ -6,7 +6,7 @@
 /*   By: aelphias <aelphias@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 15:49:46 by aelphias          #+#    #+#             */
-/*   Updated: 2020/07/29 19:52:24 by aelphias         ###   ########lyon.fr   */
+/*   Updated: 2020/07/31 22:01:51 by aelphias         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,48 +37,46 @@
 # define OCTAL 'o'
 # define HEX 'x'
 # define HEX_UP 'X'
-# define PERCENT '%'
 /*my lovely struct data--->*/
 typedef	struct	s_printf
 {
-	/* int     plus;
-	int     minus;
-	int     zero;
-	int     hash;
-	int     space; */
-	char    flag; // in binary
+	va_list args;
+	char    flag; /* in binary */
 	int		dot;
-    int     positive;
+    int     sign;
 	int		spec;
 	int		width;
 	int		precision;
-	int		size;
+	int		size; /* in binary */
 	char	*s;
 	int		all_len;
     int     digits;
-    int     num_int;
-	va_list args;
+	int		to_pad;
+	long long num_int;
 }			t_printf;
 /*<---my lovely struct data*/
 	int	ft_printf(const char *s, ...);
 	void	ft_parse_flags(t_printf *data);
 	void	parse_width(t_printf *data);
 	void    clean_flags(t_printf *data);
-	void    print_di(t_printf *data);
-    void    print_di_pres(t_printf *data);
 	void	parse_spec(t_printf *data);
 	void	parse_dot(t_printf *data);
-	void	parse_presion(t_printf *data);
+	void	parse_precision(t_printf *data);
+    void    parse_size(t_printf *data);
+    void    print(t_printf *data);
+	void    print_di(t_printf *data);
+	void	count_d(long long num, t_printf *data);
+	void	get_int(t_printf *data);
 
 /*TEST--->*/
 	void	tst_flags(t_printf *data);
 
 
-	//void	ft_parse_flags(t_printf *data, const char *s);
-	//void	ft_init_struct_printf(t_printf *data, const char *s, va_list args);
-	//void	ft_count_str(t_printf *data, va_list args);
-	//void	ft_count_int(t_printf *data, va_list args);
-	//void	ft_count(t_printf *data, va_list args);
-	//void	ft_count_char(t_printf *data);
+	/* void	ft_parse_flags(t_printf *data, const char *s);
+	void	ft_init_struct_printf(t_printf *data, const char *s, va_list args);
+	void	ft_count_str(t_printf *data, va_list args);
+	void	ft_count_int(t_printf *data, va_list args);
+	void	ft_count(t_printf *data, va_list args);
+	void	ft_count_char(t_printf *data); */
 
 #endif

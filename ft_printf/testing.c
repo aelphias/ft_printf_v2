@@ -25,4 +25,6 @@ void tst_flags(t_printf *data)
 		printf("dot: yes}\n");
 	if (data->precision)
 		printf("{data->presion:%d}\n", data->precision);
+	printf("\n{digits:%d}\n", data->digits);
+
 }

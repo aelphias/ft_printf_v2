@@ -37,6 +37,7 @@ void    if_percent(t_printf *data)
 	}
 	else
 		ft_parse_flags(data);
+    /*can change =% & != % */
 }
 
 int ft_printf(const char *s, ...)
@@ -47,13 +48,13 @@ int ft_printf(const char *s, ...)
 	va_start(data.args, s);
 	while (*(data.s) != '\0')
 	{
-		if (*(data.s) != '%')
-			ft_simple_print(&data);
-		else
+		if (*data.s == '%')
 		{	
 			if_percent(&data);
 			clean_flags(&data);
 		}
+        else
+			ft_simple_print(&data);
 	}
 	va_end(data.args);
 	return (data.all_len);
