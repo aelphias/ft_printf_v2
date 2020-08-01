@@ -46,7 +46,7 @@ void	get_int(t_printf *data)
 
 void    print_di(t_printf *data)
 {
-	/* data->all_len += ft_putnbr(va_arg(data->args, int));*/
+	get_int(data);
 	if (data->flag & PLUS)
 	{
 		write(1, "+", 1);
@@ -65,7 +65,7 @@ void    print_di(t_printf *data)
 				data->to_pad--;
 			}
 		}
-		else if (data->flag & ZERO)
+		else if ((data->flag & ZERO) && (data->precision < 1))
 		{
 			data->all_len += data->to_pad;
 			while (data->to_pad)
@@ -77,5 +77,5 @@ void    print_di(t_printf *data)
 		}
 	}
 	else
-		data->all_len += ft_putnbr(va_arg(data->args, int));
+		data->all_len += ft_putnbr(data->num_int);
 }

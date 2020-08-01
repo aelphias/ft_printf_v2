@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: aelphias <aelphias@student.42lyon.fr>      +#+  +:+       +#+        */
+/*   By: aelphias <aelphias@student.21-school.ru    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/13 15:49:46 by aelphias          #+#    #+#             */
-/*   Updated: 2020/07/31 22:01:51 by aelphias         ###   ########lyon.fr   */
+/*   Updated: 2020/08/01 14:33:18 by aelphias         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,6 +41,7 @@
 typedef	struct	s_printf
 {
 	va_list args;
+	char	*s;
 	char    flag; /* in binary */
 	int		dot;
     int     sign;
@@ -48,7 +49,6 @@ typedef	struct	s_printf
 	int		width;
 	int		precision;
 	int		size; /* in binary */
-	char	*s;
 	int		all_len;
     int     digits;
 	int		to_pad;

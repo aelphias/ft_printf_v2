@@ -46,7 +46,7 @@ int ft_printf(const char *s, ...)
 
 	ft_init_struct_printf(&data, (char*)s);
 	va_start(data.args, s);
-	while (*(data.s) != '\0')
+	while (*data.s != '\0')
 	{
 		if (*data.s == '%')
 		{	
