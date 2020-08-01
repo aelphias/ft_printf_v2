@@ -6,7 +6,7 @@
 /*   By: aelphias <aelphias@student.42lyon.fr>      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/06/21 14:10:35 by aelphias          #+#    #+#             */
-/*   Updated: 2020/07/31 18:58:40 by aelphias         ###   ########lyon.fr   */
+/*   Updated: 2020/08/01 21:11:20 by aelphias         ###   ########lyon.fr   */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,10 +16,10 @@
 
 int main(void)
 {
-	int digit = 42;
+	int digit = 1;
 	int cnt1 = 0;
 	int cnt2 = 0;
-	char *format = "%d";
+	char *format = "%4.4d";
 	cnt1 = ft_printf(format, digit);
 	printf("\nmy_length: %d\n", cnt1);
 	printf("\n----------orig:\n");

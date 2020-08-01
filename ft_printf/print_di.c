@@ -47,7 +47,7 @@ void	get_int(t_printf *data)
 void    print_di(t_printf *data)
 {
 	get_int(data);
-	if (data->flag & PLUS)
+	if ((data->flag & PLUS) && !data->sign)
 	{
 		write(1, "+", 1);
 		data->all_len++;
