@@ -44,7 +44,7 @@ void	get_int(t_printf *data)
 		count_d(data->num_int, data);
 }
 
-void    print_di(t_printf *data)
+void    print_di(t_printf *		data)
 {
 	get_int(data);
 	if ((data->flag & PLUS) && !data->sign)
@@ -55,8 +55,10 @@ void    print_di(t_printf *data)
 	if (data->digits <= data->width)
 	{
 	   data->to_pad = data->width - data->digits;
-		if (data->flag & MINUS)
-		{
+		if ((data->flag & MINUS) && data->precision < data->width)
+		{	
+			if (data->flag)
+			data->to_pad -= 1;
 			data->all_len += ft_putnbr(data->num_int);
 			data->all_len += data->to_pad;
 			while (data->to_pad)
@@ -76,6 +78,23 @@ void    print_di(t_printf *data)
 			data->all_len += ft_putnbr(data->num_int);
 		}
 	}
+	if (data->precision > data->width)
+	{	
+		if ((data->flag & SPACE) && !(data->flag & PLUS))
+		{
+			write(1, " ", 1);
+			data->all_len++;
+		}
+		data->to_pad = data->precision - data->digits;
+		while (data->to_pad)
+		{
+			write(1, "0", 1);
+			data->to_pad--;
+			data->all_len++;
+		}
+		data->all_len += ft_putnbr(data->num_int);
+	}
 	else
 		data->all_len += ft_putnbr(data->num_int);
 }
+                                                                                                                                                                                                                                                                                                                                                                                                                                                               
